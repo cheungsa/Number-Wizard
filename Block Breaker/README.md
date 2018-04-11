@@ -4,6 +4,6 @@ This is a recreation of classic block breaking games like Arkanoid. A bat at the
 
 There is background music, and sound effects for the ball bouncing and for the blocks breaking. Once all destructible blocks in the level are gone, the player can move onto the next level without interruption of the music. 
 
-![alt text](Unity/Screenshots/Block_Breaker_Level1.PNG "Level 1")
+![alt text](../Screenshots/Block_Breaker_Level1.PNG "Level 1")
 
-![alt text](Unity/Screenshots/Block_Breaker_Level2.PNG "Level 2")
+![alt text](../Screenshots/Block_Breaker_Level2.PNG "Level 2")
