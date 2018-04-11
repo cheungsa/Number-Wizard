@@ -5,3 +5,5 @@ This is a visual Number Wizard game that has a basic UI, consisting of a simple 
 ![alt text](../Screenshots/Number_Wizard_Start.PNG "Start")
 
 ![alt text](../Screenshots/Number_Wizard_Game.PNG "Game")
+
+![alt text](../Screenshots/Number_Wizard_GameOver.PNG "Game Over")
