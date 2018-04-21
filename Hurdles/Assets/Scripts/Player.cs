@@ -8,6 +8,7 @@ public class Player : MonoBehaviour {
 	public float acceleration = 1f;
 	public float jumpingForce = 300f;
 	public float jumpingCooldown = 1.5f;
+	public bool reachedFinishLine = false;
 
 	private float speed = 0f;
 	private float jumpingTimer = 0f;
@@ -43,7 +44,16 @@ public class Player : MonoBehaviour {
 		}
 	}
 
+	// Decrease the player's speed if an obstacle is hit
 	void OnTriggerEnter (Collider collider) {
-		Debug.Log(collider.tag);
+		if (collider.tag == "Obstacle")
+		{
+			speed *= 0.3f;
+		}
+
+		if (collider.tag == "FinishLine")
+		{
+			reachedFinishLine = true;
+		}
 	}
 }
