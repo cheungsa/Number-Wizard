@@ -11,6 +11,6 @@
 9. Ahoy Matey RTS
 10. Whack-A-Mole (VR) - DONE
 11. Hurdles (VR) - DONE
-12. Cup and Ball (VR)
+12. Cup and Ball (VR) - In Progress
 13. Bowling (VR)
 14. Ninja Sword (VR)
