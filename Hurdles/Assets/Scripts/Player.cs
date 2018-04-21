@@ -8,10 +8,12 @@ public class Player : MonoBehaviour {
 	public float acceleration = 1f;
 	public float jumpingForce = 300f;
 	public float jumpingCooldown = 1.5f;
+	public float moveBackTimer = 0f;
 	public bool reachedFinishLine = false;
 
 	private float speed = 0f;
 	private float jumpingTimer = 0f;
+	private bool collided = false;
 
 	// Use this for initialization
 	void Start () {
@@ -27,8 +29,22 @@ public class Player : MonoBehaviour {
 		}
 		speed += acceleration * Time.deltaTime;
 
-		// Move the player forward at speed/frame
-		transform.position += speed * Vector3.forward * Time.deltaTime;
+		// Move the player back if obstacle was hit
+		if (collided == true)
+		{
+			transform.position -= speed * Vector3.forward * Time.deltaTime;
+			moveBackTimer += Time.deltaTime;
+			if (moveBackTimer >= 1f)
+			{
+				collided = false;
+				moveBackTimer = 0f;
+			}
+		}
+		else
+		{
+			// Move the player forward at speed/frame
+			transform.position += speed * Vector3.forward * Time.deltaTime;
+		}
 
 		// Make the player jump
 		jumpingTimer -= Time.deltaTime;
@@ -49,6 +65,7 @@ public class Player : MonoBehaviour {
 		if (collider.tag == "Obstacle")
 		{
 			speed *= 0.3f;
+			collided = true;
 		}
 
 		if (collider.tag == "FinishLine")
