@@ -13,7 +13,7 @@ public class Player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.Space)) {
+		if (Input.GetButtonDown("Fire1") || GvrPointerInputModule.Pointer.TriggerDown || Input.GetKeyDown(KeyCode.Space)) {
 			RaycastHit hit; // stores the object that Player hits
 
 			if (Physics.Raycast(transform.position, transform.forward, out hit))
